@@ -1,0 +1,22 @@
+@import '../../app.less';
+
+.btn-tab-add {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 801;
+    padding-bottom: constant(safe-area-inset-bottom); //为底下圆弧的高度 34px
+    padding-bottom: env(safe-area-inset-bottom); //为底下圆弧的高度 34px
+
+    .add-inner {
+        background: @color-mummys;
+        color: #ffffff;
+        text-align: center;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        font-size: 72px;
+        line-height: 120px;
+    }
+}

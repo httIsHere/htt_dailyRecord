@@ -1,0 +1,93 @@
+@import "../../app.less";
+.month-box {
+    padding: 50px 30px 30px;
+    display: flex;
+    align-items: center;
+    font-size: 32px;
+    font-family: king-basil-lite;
+    width: 100%;
+    color: @color-brand-dark;
+    .label {
+        font-size: 36px;
+        margin-right: 40px;
+    }
+    .monthList{
+        .monthItem {
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            display: inline-block;
+            line-height: 40px;
+            &.curMonth {
+                color: #ffffff;
+                background: @color-brand-dark;
+                border-radius: 50%;
+            }
+        }
+    }
+}
+
+.main-box {
+    width: 630px;
+    height: 800px;
+    margin: 40px auto;
+    box-sizing: border-box;
+    .box-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 0;
+        background-color: @color-alabaster;
+        padding: 30px;
+        box-sizing: border-box;
+        position: relative;
+        .bg-img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            /* 设置高斯模糊 */
+	        filter: blur(5px);
+        }
+        .calendar-box{
+            width: 85%;
+            font-size: 24px !important;
+            .at-calendar__controller{
+                display: none !important;
+            }
+            .at-calendar__header {
+                .header__flex{
+                    height: 48px;
+                }
+                .header__flex-item {
+                    font-size: 24px;
+                }
+            }
+            .at-calendar__list.flex .flex__item {
+                font-size: 24px;
+            }
+            .at-calendar__list.flex .flex__item-container {
+                height: 48px;
+                width: 48px;
+            }
+        }
+        .todo-list-box {
+            width: 500px;
+            height: 600px;
+            background-color: @color-gray;
+            float: right;
+            position: absolute;
+            right: -30px;
+            top: 450px;
+            color: #ffffff;
+            box-sizing: border-box;
+            padding: 30px;
+            .todo-title {
+                text-align: center;
+                font-family: halimun;
+            }
+        }
+    }
+}

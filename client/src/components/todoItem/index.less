@@ -1,0 +1,41 @@
+@import "../../app.less";
+.component-todoItem{
+    padding: 10px;
+    .item-inner {
+        display: flex;
+        align-items: center;
+        .item-check-icon {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            border: 1px solid @color-brand;
+            text-align: center;
+            line-height: 20px;
+            margin-right: 20px;
+        }
+        .item-content {
+            width: 374px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    }
+    &.item-checked{
+        .item-check-icon {
+            background-color: @color-brand;
+        }
+        .item-content {
+            text-decoration: line-through;
+        }
+    }
+    &.item-index{
+        .item-check-icon {
+            border-color: #ffffff;
+        }
+        &.item-checked {
+            .item-check-icon {
+                background-color: #ffffff;
+            }
+        }
+    }
+}

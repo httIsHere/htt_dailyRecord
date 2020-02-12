@@ -1,6 +1,7 @@
 import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index'
 
+import './assets/custom-theme.scss'
 import './app.less'
 
 // 如果需要在 h5 环境中开启 React Devtools
@@ -11,34 +12,38 @@ import './app.less'
 
 class App extends Component {
 
+  // eslint-disable-next-line react/sort-comp
   config = {
     pages: [
       'pages/index/index'
     ],
     window: {
       backgroundTextStyle: 'light',
-      navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: 'WeChat',
+      navigationBarBackgroundColor: '#FAF9F7',
+      navigationBarTitleText: '汪汪打卡',
       navigationBarTextStyle: 'black'
     },
     cloud: true
   }
 
-  componentDidMount () {
+  componentDidMount() {
     if (process.env.TARO_ENV === 'weapp') {
-      Taro.cloud.init()
+      Taro.cloud.init({
+        env: process.env.NODE_ENV,
+        traceUser: true
+      })
     }
   }
 
-  componentDidShow () {}
+  componentDidShow() { }
 
-  componentDidHide () {}
+  componentDidHide() { }
 
-  componentDidCatchError () {}
+  componentDidCatchError() { }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数
-  render () {
+  render() {
     return (
       <Index />
     )

@@ -16,13 +16,18 @@ export default class Login extends Component {
 
   componentDidHide() {}
 
-  getLogin = () => {
+  getLogin = (info) => {
+    let user_info = info.detail.userInfo;
     Taro.cloud
       .callFunction({
-        name: "login",
-        data: {}
+        name: "tcbRouter",
+        data: {
+          $url: "login",
+          user_info
+        }
       })
       .then(res => {
+        console.log(res)
         this.setState({
           context: res.result
         })
@@ -31,8 +36,8 @@ export default class Login extends Component {
 
   render() {
     return (
-      <View className='index'>
-        <Button onClick={this.getLogin}>获取登录云函数</Button>
+      <View className='view-box view-login'>
+        <Button openType='getUserInfo' onGetUserInfo={this.getLogin}>获取登录云函数</Button>
         <Text>context：{JSON.stringify(this.state.context)}</Text>
       </View>
     )
