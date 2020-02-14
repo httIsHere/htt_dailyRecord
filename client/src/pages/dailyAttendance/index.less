@@ -1,0 +1,74 @@
+@import "../../app.less";
+
+.daily-date {
+    color: @color-xanadu;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    .date-arrow{
+        width: 40px;
+        height: 40px;
+        background: @color-mummys;
+        text-align: center;
+        line-height: 40px;
+        border-radius: 50%;
+        color: #ffffff;
+    }
+}
+
+.attendance-statistics {
+    padding: 30px;
+
+    .box-inner {
+        background: @color-alabaster;
+        padding: 30px;
+        border-radius: 20px;
+        color: @color-mummys;
+
+        .sta-detail {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .detail-item {
+                width: 50%;
+                text-align: center;
+                font-size: 24px;
+
+                .big-num {
+                    font-size: 56px;
+                    color: @red-font;
+                    font-family: halimun;
+                }
+            }
+        }
+    }
+}
+.attendance-box{
+    padding: 30px;
+    .list-box {
+        .list-title {
+            position: relative;
+            font-weight: bold;
+            .list-num {
+                min-width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                text-align: center;
+                line-height: 30px;
+                color: @color-snow;
+                display: inline-block;
+                background: @color-gray;
+                font-size: 20px;
+                position: absolute;
+                margin-top: -10px;
+                margin-left: 10px;
+            }
+        }
+        .list-inner {
+            padding: 30px 0;
+        }
+    }
+}

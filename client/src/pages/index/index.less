@@ -87,7 +87,33 @@
             .todo-title {
                 text-align: center;
                 font-family: halimun;
+                font-family: king-basil-lite;
             }
         }
     }
+}
+.at-float-layout__container {
+    border-radius: 20px 20px 0 0 !important;
+}
+.add-list {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .add-item {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 100px;
+        color: #ffffff;
+    }
+}
+.tip {
+    color: @color-brand-dark;
+    text-align: center;
+    margin: 30px;
+    padding-bottom: constant(safe-area-inset-bottom); //为底下圆弧的高度 34px
+    padding-bottom: env(safe-area-inset-bottom); //为底下圆弧的高度 34px
 }

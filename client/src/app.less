@@ -1,25 +1,62 @@
 /* Custom Theme */
 @color-brand: #839788;
-@color-brand-light: #a2b1a6;
+@color-brand-light: #a0b0a5;
 @color-brand-dark: #69796d;
 
 /* RGB */
-@color-xanadu: rgba(115, 135, 123, 1);
+@color-xanadu: #73877b;
 @color-alabaster: #f0ede5;
-@color-mummys: rgba(131, 151, 136, 1);
-@color-snow: rgba(250, 249, 247, 1);
+@color-mummys: #839788;
+@color-snow: #faf9f7;
 @color-gray: #bebcb7;
 
-@font-face{
+@red-font: #f53d4e;
+@light-opacity: rgba(160, 176, 165, .2);
+@light-alabaster: rgba(240, 237, 229, .5);
+
+// font-family
+@font-face {
     font-family: king-basil-lite;
     src: url(./assets/King-Basil-Lite.otf);
 }
+
 @font-face {
     font-family: halimun;
     src: url(./assets/Halimun-2.ttf);
 }
 
+// icons
+@font-face {
+    font-family: 'iconfont';
+    /* project id 1636596 */
+    src: url('//at.alicdn.com/t/font_1636596_2qpffpcaeyn.eot');
+    src: url('//at.alicdn.com/t/font_1636596_2qpffpcaeyn.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_1636596_2qpffpcaeyn.woff2') format('woff2'),
+        url('//at.alicdn.com/t/font_1636596_2qpffpcaeyn.woff') format('woff'),
+        url('//at.alicdn.com/t/font_1636596_2qpffpcaeyn.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_1636596_2qpffpcaeyn.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 // 小程序背景色
 page {
-    background-color: @color-snow
+    background-color: @color-snow;
+    color: @color-xanadu;
+}
+
+.at-float-layout__container {
+    min-height: unset;
+    .layout-body {
+        min-height: unset;
+    }
+}
+.at-float-layout .layout-body__content{
+    min-height: unset;
 }

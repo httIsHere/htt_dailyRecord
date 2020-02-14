@@ -11,6 +11,7 @@ cloud.init({
 
 const db = cloud.database()
 const userCollection = db.collection('user')
+const attendanceCollection = db.collection('attendance-events')
 
 // 云函数入口函数
 exports.main = async (event, context) => {
@@ -84,6 +85,37 @@ exports.main = async (event, context) => {
         ctx.body = {
             srvTime: Date.now()
         }
+        await next();
     })
+
+    // add attendance
+    app.router('add-attendance', async (ctx, next) => {
+        const wxContext = cloud.getWXContext()
+        let { data } = event
+        try {
+            await attendanceCollection.add({
+                data: {
+                    created_time: db.serverDate(),
+                    day_finished: 0,
+                    day_times: data.times,
+                    label: data.label,
+                    openId: wxContext.OPENID,
+                    remind_time: data.remind_time,
+                    updated_time: db.serverDate()
+                }
+            })
+            ctx.body = {
+                statusCode: 200,
+                data: '添加成功'
+            }
+        } catch (e) {
+            ctx.body = {
+                statusCode: 500,
+                errorMsg: '添加失败'
+            }
+        }
+        await next();
+    })
+
     return app.serve();
 }

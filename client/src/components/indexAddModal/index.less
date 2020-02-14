@@ -1,0 +1,28 @@
+@import "../../app.less";
+.modal-content{
+    .input-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        .label{
+            width: 15%;
+            margin-right: 20px;
+        }
+        .modal-input {
+            width: 85%;
+            border-bottom: 1px solid @color-gray;
+            padding: 10px;
+            &.number-input {
+                width: 30%;                
+            }
+        }
+        .picker{
+            margin: 10px 0;
+            border: 1px solid @color-xanadu;
+            color: @color-xanadu;
+            border-radius: 30px;
+            padding: 3px 10px;
+            font-size: 24px;
+        }
+    }
+}

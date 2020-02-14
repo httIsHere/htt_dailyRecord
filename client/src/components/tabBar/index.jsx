@@ -1,3 +1,4 @@
+/* eslint-disable react/sort-comp */
 import Taro, { Component } from "@tarojs/taro"
 import { View } from "@tarojs/components"
 import { AtTabBar } from 'taro-ui'
@@ -10,7 +11,7 @@ export default class Login extends Component {
   render() {
     return (
       <View className='view-component component-tabBar'>
-        <View className='btn btn-tab-add'>
+        <View className='btn btn-tab-add' onClick={this.toAdd.bind(this)}>
           <View className='add-inner'>+</View>
         </View>
         <AtTabBar
@@ -26,5 +27,9 @@ export default class Login extends Component {
         />
       </View>
     )
+  }
+
+  toAdd() {
+    this.props.onClickAdd();
   }
 }
